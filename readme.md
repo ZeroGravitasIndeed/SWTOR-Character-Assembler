@@ -2,20 +2,25 @@
 
 **This Blender Addon allows for the processing of [TORCommunity.com's Character Designer](https://github.com/SWTOR-Slicers/WikiPedia/wiki/Using-TORCommunity-Character-Designer)'s .zipped SWTOR characters folders directly from Blender.**
 
-**It combines the previous two-steps functionality of the [Slicers GUI Tool](https://github.com/SWTOR-Slicers/Slicers-GUI)'s Locate feature and the [.gr2 Importer Addon](https://github.com/SWTOR-Slicers/Granny2-Plug-In-Blender-2.8x)'s Character Importer as an automated one-button process. It also comes with a quick Objects / Materials / Collections prefixer to be able to do multiple imports in a single Blender project, and with a Materials converter to facilitate baking operations for exporting SWTOR characters to other apps.**
+**It combines the previous two-steps functionality of the [Slicers GUI Tool](https://github.com/SWTOR-Slicers/Slicers-GUI)'s Locate feature and the [.gr2 Importer Addon](https://github.com/SWTOR-Slicers/Granny2-Plug-In-Blender-2.8x)'s Character Importer as an automated one-button process**. It also comes with a **quick Objects / Materials / Collections prefixer** to be able to do multiple imports in a single Blender project, and with a **Materials converter to facilitate baking** operations for exporting SWTOR characters to other apps.
 
-It should be noted that this Add-on's tools exist in the **[ZeroGravitas (ZG) SWTOR Tools Add-on](https://github.com/SWTOR-Slicers/ZG-SWTOR-Tools)**, too (that one is kind of an "all-in-one" add-on).
+It should be noted that **this Add-on's tools exist in the [ZeroGravitas (ZG) SWTOR Tools Add-on](https://github.com/SWTOR-Slicers/ZG-SWTOR-Tools), too** (that one is kind of an "all-in-one" add-on).
 
 ![Alt text](images/swtor_char_assembler_010.png)
 
 ## **[Download the Addon's latest release](https://github.com/SWTOR-Slicers/SWTOR-Character-Locator/releases/latest)**
 
 ## Requirements:
-* **An enabled [.gr2 Importer Addon](https://github.com/SWTOR-Slicers/Granny2-Plug-In-Blender-2.8x)**, as this one calls it to execute the actual character importing and assembling.
+
+* **Blender 3.6** (or 4.0 if using a 4.0-compatible .gr2 importer Add-on).
+* **An enabled [.gr2 Importer Addon](https://github.com/SWTOR-Slicers/Granny2-Plug-In-Blender-2.8x)**, as this one calls it to execute the actual character importing and assembling. Check that you are using the latest release.
 * **A SWTOR assets extraction** performed via **[Slicers GUI](https://github.com/SWTOR-Slicers/Slicers-GUI)** (with either the "Dynamic" or "All" presets) or EasyMYP.
-* **TORCommunity.com's Character Designer-exported (unzipped) folders**, or non-Creature-type NPCs ones exported from its NPC database.  
-* **THERE'S NO NEED TO PROCESS THE FOLDERS WITH THE SLICERS GUI'S LOCATE FEATURE**. It's the whole point of this new Addon 🙂.
+* **TORCommunity.com's Character Designer-exported, zipped folders**, or non-Creature-type NPCs ones exported from its NPC database. They need to be unzipped to be used.
+
+**THERE'S NO NEED TO PROCESS THE FOLDERS WITH THE SLICERS GUI'S LOCATE FEATURE**. It's almost the whole point of this new Addon 🙂.
+
 ## Features
+
 The SWTOR Character Assembler:
 * Fills a Player Character/NPC's folder (exported by TORCommunity.com's Character Designer or NPC database) with all the game assets required for assembling them in Blender.  
   **It gathers the character or NPC's skeleton rig**, saving it inside a "skeleton" folder next to "models" and "materials".
@@ -23,11 +28,11 @@ The SWTOR Character Assembler:
   It solves some long lingering issues, such as placing the typically **missing "black.dds" texturemap** in our SWTOR asset extractions if absent.  
 
   It also gathers some maps that weren't being covered by Slicers GUI:
-  * **DirectionMaps**, that can be used by the Creature, SkinB, and HairC Shaders to produce anisotropic-like speculars.
-  * **WrinklesMaps**, meant to be used in heads' SkinB Shaders to animate facial wrinkles. Our version of the shader doesn't support them yet, but some experiments are being carried in order to implement their use).
+  * **DirectionMaps**, that can be used by the HairC and Creature Shaders to produce anisotropic-like speculars. They are meant to be used in some SkinB materials, too, but our current Blender SWTOR SkinB shader doesn't support that yet. 
+  * **WrinklesMaps**, meant to be used in heads' SkinB Shaders to animate facial wrinkles. Our version of the SkinB shader doesn't support them yet, either, but some experiments are being carried in order to implement their use).
 
 
-* Under the hood, the Addon calls Darth Atroxa's .gr2 Importer Addon's Character Import feature to assemble the character. It should be pointed out that this means this Addon has the same limitations regarding Creature-type (single mesh) NPCs, and some bugs importing body and armor parts with two materials, such as underwear ones (the latter seems to be solved and is waiting for a revision before release).
+* Under the hood, the Addon calls Darth Atroxa's .gr2 Importer Addon's Character Import feature to assemble the character. It should be pointed out that this means this Addon has the same limitations regarding Creature-type (single mesh) NPCs.
 
 * **It reports its progress and errors through Blender's Console**. It is recommended to keep it open to check for any error message, as it lists all the files it detects and copies, showing if any entry is malformed or leads to an inexistent file.
 
