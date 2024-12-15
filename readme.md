@@ -1,3 +1,5 @@
+## As this standalone Add-on is falling behind the version integrated in the ZG SWTOR Tools in compatibility and features, I am deprecating it. Please [download and use the ZG SWTOR Tools Add-on, instead](https://github.com/SWTOR-Slicers/ZG-SWTOR-Tools).
+
 # SWTOR Character Assembler
 
 **This Blender Addon allows for the processing of [TORCommunity.com's Character Designer](https://github.com/SWTOR-Slicers/WikiPedia/wiki/Using-TORCommunity-Character-Designer)'s .zipped SWTOR characters folders directly from Blender.**
